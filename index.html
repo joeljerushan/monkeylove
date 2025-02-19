@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonkeyLove ($MLV) - The Funniest Meme Coin of 2025!</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/fav/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/fav/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/fav/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/fav/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/fav/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/fav/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/fav/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/fav/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/fav/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/fav/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png" />
+    <link rel="manifest" href="/fav/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ff6b00" />
+    <meta name="msapplication-TileImage" content="/fav/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ff6b00" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gradient-primary: linear-gradient(135deg, #ffb700 0%, #ff6b00 100%);
+        --gradient-dark: linear-gradient(180deg, #0a0f1f 0%, #1a1f2f 100%);
+        --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      }
+      body {
+        font-family: 'Outfit', sans-serif;
+        background: var(--gradient-dark);
+        overflow-x: hidden;
+      }
+      .gradient-text {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .gradient-bg {
+        background: var(--gradient-primary);
+      }
+      .card-bg {
+        background: var(--gradient-card);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+      }
+      .card-bg:hover {
+        border-color: rgba(255, 183, 0, 0.1);
+        box-shadow: 0 0 30px rgba(255, 183, 0, 0.1);
+      }
+      .hero-glow {
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(circle at 20% 20%, rgba(255, 183, 0, 0.15) 0%, rgba(10, 15, 31, 0) 50%),
+          radial-gradient(circle at 80% 80%, rgba(255, 107, 0, 0.15) 0%, rgba(10, 15, 31, 0) 50%);
+        pointer-events: none;
+        animation: rotate 20s linear infinite;
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .token-value {
+        background: rgba(255, 183, 0, 0.1);
+        border: 1px solid rgba(255, 183, 0, 0.2);
+      }
+      .grid-pattern {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body class="text-white min-h-screen relative">
+    <div class="hero-glow fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="grid-pattern fixed inset-0 opacity-20"></div>
+
+    <!-- Main Content -->
+    <div class="relative">
+      <div class="container mx-auto px-4 pt-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-24">
+          <div class="relative inline-block">
+            <img src="/logo.jpeg" alt="MonkeyLove Logo" class="w-40 h-40 mx-auto mb-8 rounded-full animate-float" />
+            <!-- <div class="absolute -top-4 -right-4 token-value px-4 py-2 rounded-full text-sm font-medium">
+              1 $MLV = $0.000042
+            </div> -->
+          </div>
+
+          <h1 class="text-7xl font-bold mb-8 leading-tight">🐒 MonkeyLove <span class="gradient-text">$MLV</span></h1>
+          <p class="text-3xl font-light mb-8 text-gray-300">The Funniest Meme Coin of 2025! 🚀</p>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            🔥 Inspired by the legendary "Monkey Love & Coconut Crisis" in Sri Lanka! ⚡🥥
+          </p>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mt-12 mb-16 px-4">
+            <div class="card-bg rounded-2xl p-6 text-center">
+              <p class="text-gray-400 text-sm mb-2">Market Cap</p>
+              <p class="gradient-text text-4xl sm:text-5xl lg:text-5xl font-bold">$42.5M</p>
+            </div>
+            <div class="card-bg rounded-2xl p-6 text-center">
+              <p class="text-gray-400 text-sm mb-2">Holders</p>
+              <p class="gradient-text text-4xl sm:text-5xl lg:text-5xl font-bold">12,458</p>
+            </div>
+            <div class="card-bg rounded-2xl p-6 text-center sm:col-span-2 lg:col-span-1">
+              <p class="text-gray-400 text-sm mb-2">Total Supply</p>
+              <p class="gradient-text text-4xl sm:text-5xl lg:text-5xl font-bold">1B $MLV</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-6 mt-12">
+            <button
+              class="gradient-bg px-12 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all transform hover:scale-105 shadow-lg"
+            >
+              Buy $MLV
+            </button>
+            <a
+              href="https://discord.com/invite/jvcQkz7MNP"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-white/5 backdrop-blur-lg border border-orange-500/20 px-12 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all transform hover:scale-105"
+            >
+              Join Community
+            </a>
+          </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+          <div class="card-bg p-8 rounded-2xl transform transition-all group">
+            <div class="mb-6">
+              <span class="text-4xl">🐒</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">Monkey-Powered Staking</h3>
+            <p class="text-gray-400 leading-relaxed">Earn virtual coconuts & grow your monkey tribe!</p>
+          </div>
+          <div class="card-bg p-8 rounded-2xl transform transition-all group">
+            <div class="mb-6">
+              <span class="text-4xl">🥥</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">Coconut Inflation Burn</h3>
+            <p class="text-gray-400 leading-relaxed">Token burns to simulate coconut shortages!</p>
+          </div>
+          <div class="card-bg p-8 rounded-2xl transform transition-all group">
+            <div class="mb-6">
+              <span class="text-4xl">🎮</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">Play-to-Earn Bananas</h3>
+            <p class="text-gray-400 leading-relaxed">NFT game with coconuts, bananas & rewards!</p>
+          </div>
+          <div class="card-bg p-8 rounded-2xl transform transition-all group">
+            <div class="mb-6">
+              <span class="text-4xl">🗳️</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">Monkey DAO</h3>
+            <p class="text-gray-400 leading-relaxed">The Monkey Tribe decides the future of $MLV!</p>
+          </div>
+        </div>
+
+        <!-- Tokenomics Section -->
+        <div class="mb-24">
+          <h2 class="text-5xl font-bold text-center mb-16"><span class="gradient-text">Tokenomics</span> 🧠</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="card-bg p-8 rounded-2xl text-center group">
+              <div class="text-5xl font-bold mb-4 group-hover:gradient-text transition-all">30%</div>
+              <p class="text-gray-400">Airdrop 🏆</p>
+              <div class="mt-4 h-2 bg-white/5 rounded-full overflow-hidden">
+                <div class="h-full w-[30%] gradient-bg"></div>
+              </div>
+            </div>
+            <div class="card-bg p-8 rounded-2xl text-center group">
+              <div class="text-5xl font-bold mb-4 group-hover:gradient-text transition-all">35%</div>
+              <p class="text-gray-400">Liquidity Pool ⚡</p>
+              <div class="mt-4 h-2 bg-white/5 rounded-full overflow-hidden">
+                <div class="h-full w-[35%] gradient-bg"></div>
+              </div>
+            </div>
+            <div class="card-bg p-8 rounded-2xl text-center group">
+              <div class="text-5xl font-bold mb-4 group-hover:gradient-text transition-all">20%</div>
+              <p class="text-gray-400">Staking & Rewards 🍌</p>
+              <div class="mt-4 h-2 bg-white/5 rounded-full overflow-hidden">
+                <div class="h-full w-[20%] gradient-bg"></div>
+              </div>
+            </div>
+            <div class="card-bg p-8 rounded-2xl text-center group">
+              <div class="text-5xl font-bold mb-4 group-hover:gradient-text transition-all">15%</div>
+              <p class="text-gray-400">Marketing & Memes 🎭</p>
+              <div class="mt-4 h-2 bg-white/5 rounded-full overflow-hidden">
+                <div class="h-full w-[15%] gradient-bg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- YouTube Videos Section -->
+        <div class="mb-24">
+          <h2 class="text-5xl font-bold text-center mb-16">Watch Our <span class="gradient-text">Story</span> 🎬</h2>
+          <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <!-- Video 1 -->
+            <div class="card-bg rounded-2xl p-4 group cursor-pointer video-container" data-video-id="gt-bWGTFnuI">
+              <div class="relative">
+                <img
+                  src="https://img.youtube.com/vi/gt-bWGTFnuI/maxresdefault.jpg"
+                  alt="Video Thumbnail"
+                  class="w-full h-auto rounded-xl"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div
+                    class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-8 w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="card-bg rounded-2xl p-4 group cursor-pointer video-container" data-video-id="CeGNISU0CJg">
+              <div class="relative">
+                <img
+                  src="https://img.youtube.com/vi/CeGNISU0CJg/maxresdefault.jpg"
+                  alt="Video Thumbnail"
+                  class="w-full h-auto rounded-xl"
+                />
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div
+                    class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-8 w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Modal -->
+        <div id="videoModal" class="fixed inset-0 bg-black/90 z-50 hidden">
+          <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="relative w-full max-w-4xl mx-auto">
+              <div id="videoContainer" class="relative pb-[56.25%] h-0">
+                <iframe
+                  id="videoPlayer"
+                  class="absolute top-0 left-0 w-full h-full rounded-xl"
+                  src=""
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+              <button id="closeModal" class="absolute -top-12 right-0 text-white hover:text-gray-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Section -->
+        <div class="text-center mb-24">
+          <h2 class="text-5xl font-bold mb-16">Join the <span class="gradient-text">Monkey Revolution!</span> 🚀</h2>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a
+              href="https://twitter.com/MonkeyLoveCoin"
+              target="_blank"
+              class="card-bg px-8 py-6 rounded-xl font-bold text-lg group transition-all transform hover:scale-105 flex items-center gap-3"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#1DA1F2] group-hover:text-white transition-colors"
+              >
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                />
+              </svg>
+              <span class="group-hover:gradient-text">Twitter</span>
+            </a>
+            <a
+              href="https://t.me/MonkeyLoveCoin"
+              target="_blank"
+              class="card-bg px-8 py-6 rounded-xl font-bold text-lg group transition-all transform hover:scale-105 flex items-center gap-3"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#0088cc] group-hover:text-white transition-colors"
+              >
+                <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z" />
+                <path d="m16.5 7.5-5 5" />
+                <path d="m7.5 7.5 5 5" />
+              </svg>
+              <span class="group-hover:gradient-text">Telegram</span>
+            </a>
+            <a
+              href="https://discord.gg/jvcQkz7MNP"
+              target="_blank"
+              class="card-bg px-8 py-6 rounded-xl font-bold text-lg group transition-all transform hover:scale-105 flex items-center gap-3"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#5865F2] group-hover:text-white transition-colors"
+              >
+                <path d="M15.5 17.5 19 21v-2.5" />
+                <path d="M8.5 17.5 5 21v-2.5" />
+                <path d="M18.5 5c-1.5-1-4-2-6.5-2s-5 1-6.5 2" />
+                <path d="M17.5 15c.5-1.5 1-4 1-6s-.5-4.5-1-6" />
+                <path d="M6.5 15c-.5-1.5-1-4-1-6s.5-4.5 1-6" />
+                <path d="M12 13.5c1.5 0 3-.5 3-2.5s-1.5-2.5-3-2.5-3 .5-3 2.5 1.5 2.5 3 2.5Z" />
+              </svg>
+              <span class="group-hover:gradient-text">Discord</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contract Address -->
+        <div class="card-bg rounded-2xl p-8 text-center mb-16 max-w-3xl mx-auto">
+          <p class="text-gray-400 mb-4 text-lg">Contract Address</p>
+          <div class="font-mono text-orange-400 break-all p-4 bg-black/20 rounded-xl border border-orange-500/10">
+            5rtkMJ3TPFN6qURJ7TcEYTAPzGdXFM36TaGkYq7Xpump
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const closeModal = document.getElementById('closeModal');
+        const videoContainers = document.querySelectorAll('.video-container');
+
+        videoContainers.forEach((container) => {
+          container.addEventListener('click', function () {
+            const videoId = this.dataset.videoId;
+            videoPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.classList.remove('hidden');
+          });
+        });
+
+        closeModal.addEventListener('click', function () {
+          modal.classList.add('hidden');
+          videoPlayer.src = '';
+        });
+
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+            videoPlayer.src = '';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
