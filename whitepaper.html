@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonkeyLove ($MLV) - Whitepaper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gradient-primary: linear-gradient(135deg, #ffb700 0%, #ff6b00 100%);
+        --gradient-dark: linear-gradient(180deg, #0a0f1f 0%, #1a1f2f 100%);
+        --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      }
+      body {
+        font-family: 'Outfit', sans-serif;
+        background: var(--gradient-dark);
+        overflow-x: hidden;
+      }
+      .gradient-text {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .gradient-bg {
+        background: var(--gradient-primary);
+      }
+      .card-bg {
+        background: var(--gradient-card);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+      }
+      .card-bg:hover {
+        border-color: rgba(255, 183, 0, 0.1);
+        box-shadow: 0 0 30px rgba(255, 183, 0, 0.1);
+      }
+      .hero-glow {
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(circle at 20% 20%, rgba(255, 183, 0, 0.15) 0%, rgba(10, 15, 31, 0) 50%),
+          radial-gradient(circle at 80% 80%, rgba(255, 107, 0, 0.15) 0%, rgba(10, 15, 31, 0) 50%);
+        pointer-events: none;
+        animation: rotate 20s linear infinite;
+      }
+      .grid-pattern {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="text-white min-h-screen relative">
+    <div class="hero-glow fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="grid-pattern fixed inset-0 opacity-20"></div>
+
+    <!-- Navigation Menu -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0f1f]/80 backdrop-blur-lg border-b border-white/5">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="index.html">
+            <div class="flex items-center">
+              <img src="logo.jpeg" alt="MonkeyLove Logo" class="w-10 h-10 rounded-full" />
+              <span class="ml-3 text-xl font-bold">MonkeyLove</span>
+            </div>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-white/80 hover:text-white transition-colors">Home</a>
+            <a href="tokenomics.html" class="text-white/80 hover:text-white transition-colors">Tokenomics</a>
+            <a href="whitepaper.html" class="text-white transition-colors">Whitepaper</a>
+            <a href="media.html" class="text-white/80 hover:text-white transition-colors">Media</a>
+            <button
+              class="gradient-bg px-6 py-2 rounded-xl font-bold hover:opacity-90 transition-all transform hover:scale-105"
+            >
+              Buy $MLV
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button onclick="toggleMenu()" class="text-white p-2">
+              <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a
+              href="index.html"
+              class="block px-3 py-2 rounded-md text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="tokenomics.html"
+              class="block px-3 py-2 rounded-md text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+            >
+              Tokenomics
+            </a>
+            <a
+              href="whitepaper.html"
+              class="block px-3 py-2 rounded-md text-white hover:text-white hover:bg-white/5 transition-colors"
+            >
+              Whitepaper
+            </a>
+            <a
+              href="media.html"
+              class="block px-3 py-2 rounded-md text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+            >
+              Media
+            </a>
+            <button
+              class="w-full gradient-bg px-6 py-2 rounded-xl font-bold hover:opacity-90 transition-all transform hover:scale-105 mt-4"
+            >
+              Buy $MLV
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="relative mt-24">
+      <div class="container mx-auto px-4 pt-12">
+        <!-- Whitepaper Header -->
+        <div class="text-center mb-16">
+          <h1 class="text-6xl font-bold mb-8">
+            <span class="gradient-text">Whitepaper</span>
+          </h1>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            The complete guide to MonkeyLove ($MLV) - Vision, Mission, and Roadmap 📄
+          </p>
+        </div>
+
+        <!-- Whitepaper Content -->
+        <div class="max-w-4xl mx-auto">
+          <!-- Introduction -->
+          <div class="card-bg p-8 rounded-2xl mb-8">
+            <h2 class="text-3xl font-bold mb-6">1. Introduction</h2>
+            <p class="text-gray-300 leading-relaxed">
+              MonkeyLove ($MLV) is a community-driven meme coin inspired by the legendary Monkey Love & Coconut Crisis
+              in Sri Lanka. The project is designed to bring humor, engagement, and real-world crypto utility to its
+              holders while rewarding the community for their support and participation. 🚀🐵🥥
+            </p>
+          </div>
+
+          <!-- Vision & Mission -->
+          <div class="card-bg p-8 rounded-2xl mb-8">
+            <h2 class="text-3xl font-bold mb-6">2. Vision & Mission</h2>
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-2xl font-bold mb-4">🌍 Vision</h3>
+                <p class="text-gray-300">
+                  To create a fun, engaging, and rewarding ecosystem where users can earn, trade, and enjoy MonkeyLove
+                  ($MLV) as a leading meme coin in the crypto space.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-4">🔥 Mission</h3>
+                <ul class="space-y-2 text-gray-300">
+                  <li>• Build a strong and active community through rewards and engagement</li>
+                  <li>• Create Play-to-Earn (P2E) games and NFTs powered by $MLV</li>
+                  <li>• Develop staking & farming opportunities for long-term holders</li>
+                  <li>
+                    • Launch a fully decentralized governance system where the community drives the project forward
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Utility & Use Cases -->
+          <div class="card-bg p-8 rounded-2xl mb-8">
+            <h2 class="text-3xl font-bold mb-6">3. Utility & Use Cases</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-2xl font-bold mb-4">🐵 Play-to-Earn Games</h3>
+                <ul class="space-y-2 text-gray-300">
+                  <li>• Players earn $MLV rewards by collecting bananas and completing in-game challenges</li>
+                  <li>• The Banana Economy allows players to buy upgrades, skins, and NFTs</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-4">🥥 Staking & Farming</h3>
+                <ul class="space-y-2 text-gray-300">
+                  <li>• Holders can stake $MLV to earn additional rewards over time</li>
+                  <li>• Farming rewards distributed based on HODL duration & token quantity</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Roadmap -->
+          <div class="card-bg p-8 rounded-2xl mb-8">
+            <h2 class="text-3xl font-bold mb-6">4. Roadmap</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-2xl font-bold mb-4">🚀 Phase 1 – Q1 2025</h3>
+                <ul class="space-y-2 text-gray-300">
+                  <li>✅ Smart Contract Deployment</li>
+                  <li>✅ Website & Social Media Launch</li>
+                  <li>✅ Community Building & Initial Airdrop</li>
+                  <li>✅ Listing on Raydium & Pump.fun</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-4">🌴 Phase 2 – Q2 2025</h3>
+                <ul class="space-y-2 text-gray-300">
+                  <li>🔄 Staking & Farming Implementation</li>
+                  <li>🎮 P2E Game Alpha Release</li>
+                  <li>🎨 NFT Collection Drop</li>
+                  <li>📢 Aggressive Marketing & Partnerships</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-4">🔥 Phase 3 – Q3-Q4 2025</h3>
+                <ul class="space-y-2 text-gray-300">
+                  <li>🌍 Cross-Chain Integration</li>
+                  <li>🏦 CEX Listings & Liquidity Expansion</li>
+                  <li>📱 Mobile App Development</li>
+                  <li>🗳️ Community Governance System Launch</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- How to Buy -->
+          <div class="card-bg p-8 rounded-2xl mb-8">
+            <h2 class="text-3xl font-bold mb-6">5. How to Buy $MLV</h2>
+            <div class="space-y-4 text-gray-300">
+              <p>1️⃣ Get a Solana Wallet (Phantom, Solflare, etc.)</p>
+              <p>2️⃣ Add SOL to your wallet for transactions</p>
+              <p>3️⃣ Go to Raydium or Pump.fun</p>
+              <p>4️⃣ Search for $MLV using the contract address:</p>
+              <div
+                class="font-mono text-orange-400 break-all p-4 bg-black/20 rounded-xl border border-orange-500/10 my-4"
+              >
+                5rtkMJ3TPFN6qURJ7TcEYTAPzGdXFM36TaGkYq7Xpump
+              </div>
+              <p>5️⃣ Swap SOL for $MLV and HODL! 🚀</p>
+            </div>
+          </div>
+
+          <!-- Conclusion -->
+          <div class="card-bg p-8 rounded-2xl mb-8">
+            <h2 class="text-3xl font-bold mb-6">6. Conclusion</h2>
+            <p class="text-gray-300 leading-relaxed">
+              MonkeyLove ($MLV) is more than just a meme coin—it's a fully community-driven ecosystem with real rewards,
+              Play-to-Earn mechanics, and staking opportunities. By joining early, you become part of the movement that
+              will drive $MLV to new heights. 🚀🐵🥥
+            </p>
+            <p class="text-xl font-bold gradient-text mt-6">Monkey Love is Here! Let's Go CoCo Bananas! 🍌🔥</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Community Section -->
+    <div class="text-center mb-24 mt-24">
+      <h2 class="text-5xl font-bold mb-16">Join the <span class="gradient-text">Monkey Revolution!</span> 🚀</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a
+          href="https://twitter.com/MonkeyLoveCoin"
+          target="_blank"
+          class="card-bg px-8 py-6 rounded-xl font-bold text-lg group transition-all transform hover:scale-105 flex items-center gap-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-[#1DA1F2] group-hover:text-white transition-colors"
+          >
+            <path
+              d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+            />
+          </svg>
+          <span class="group-hover:gradient-text">Twitter</span>
+        </a>
+        <a
+          href="https://t.me/MonkeyLoveCoin"
+          target="_blank"
+          class="card-bg px-8 py-6 rounded-xl font-bold text-lg group transition-all transform hover:scale-105 flex items-center gap-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-[#0088cc] group-hover:text-white transition-colors"
+          >
+            <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z" />
+            <path d="m16.5 7.5-5 5" />
+            <path d="m7.5 7.5 5 5" />
+          </svg>
+          <span class="group-hover:gradient-text">Telegram</span>
+        </a>
+        <a
+          href="https://discord.gg/jvcQkz7MNP"
+          target="_blank"
+          class="card-bg px-8 py-6 rounded-xl font-bold text-lg group transition-all transform hover:scale-105 flex items-center gap-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-[#5865F2] group-hover:text-white transition-colors"
+          >
+            <path d="M15.5 17.5 19 21v-2.5" />
+            <path d="M8.5 17.5 5 21v-2.5" />
+            <path d="M18.5 5c-1.5-1-4-2-6.5-2s-5 1-6.5 2" />
+            <path d="M17.5 15c.5-1.5 1-4 1-6s-.5-4.5-1-6" />
+            <path d="M6.5 15c-.5-1.5-1-4-1-6s.5-4.5 1-6" />
+            <path d="M12 13.5c1.5 0 3-.5 3-2.5s-1.5-2.5-3-2.5-3 .5-3 2.5 1.5 2.5 3 2.5Z" />
+          </svg>
+          <span class="group-hover:gradient-text">Discord</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contract Address -->
+    <div class="card-bg rounded-2xl p-8 text-center mb-16 max-w-3xl mx-auto">
+      <p class="text-gray-400 mb-4 text-lg">Contract Address</p>
+      <div class="font-mono text-orange-400 break-all p-4 bg-black/20 rounded-xl border border-orange-500/10">
+        5rtkMJ3TPFN6qURJ7TcEYTAPzGdXFM36TaGkYq7Xpump
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const isOpen = mobileMenu.classList.contains('hidden');
+
+        if (isOpen) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+        }
+      }
+    </script>
+  </body>
+</html>

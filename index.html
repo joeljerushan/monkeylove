@@ -107,8 +107,80 @@
     <div class="hero-glow fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
     <div class="grid-pattern fixed inset-0 opacity-20"></div>
 
+    <!-- Navigation Menu -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0f1f]/80 backdrop-blur-lg border-b border-white/5">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="index.html">
+            <div class="flex items-center">
+              <img src="logo.jpeg" alt="MonkeyLove Logo" class="w-10 h-10 rounded-full" />
+              <span class="ml-3 text-xl font-bold">MonkeyLove</span>
+            </div></a
+          >
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-white/80 hover:text-white transition-colors">Home</a>
+            <a href="tokenomics.html" class="text-white transition-colors">Tokenomics</a>
+            <a href="whitepaper.html" class="text-white/80 hover:text-white transition-colors">Whitepaper</a>
+            <a href="media.html" class="text-white/80 hover:text-white transition-colors">Media</a>
+            <button
+              class="gradient-bg px-6 py-2 rounded-xl font-bold hover:opacity-90 transition-all transform hover:scale-105"
+            >
+              Buy $MLV
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button onclick="toggleMenu()" class="text-white p-2">
+              <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a
+              href="index.html"
+              class="block px-3 py-2 rounded-md text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="tokenomics.html"
+              class="block px-3 py-2 rounded-md text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+            >
+              Tokenomics
+            </a>
+            <a
+              href="whitepaper.html"
+              class="block px-3 py-2 rounded-md text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+            >
+              Whitepaper
+            </a>
+            <a
+              href="media.html"
+              class="block px-3 py-2 rounded-md text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+            >
+              Media
+            </a>
+            <button
+              class="w-full gradient-bg px-6 py-2 rounded-xl font-bold hover:opacity-90 transition-all transform hover:scale-105 mt-4"
+            >
+              Buy $MLV
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <!-- Main Content -->
-    <div class="relative">
+    <div class="relative mt-24">
       <div class="container mx-auto px-4 pt-12">
         <!-- Hero Section -->
         <div class="text-center mb-24">
@@ -187,41 +259,6 @@
             </div>
             <h3 class="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">Monkey DAO</h3>
             <p class="text-gray-400 leading-relaxed">The Monkey Tribe decides the future of $MLV!</p>
-          </div>
-        </div>
-
-        <!-- Tokenomics Section -->
-        <div class="mb-24">
-          <h2 class="text-5xl font-bold text-center mb-16"><span class="gradient-text">Tokenomics</span> 🧠</h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="card-bg p-8 rounded-2xl text-center group">
-              <div class="text-5xl font-bold mb-4 group-hover:gradient-text transition-all">30%</div>
-              <p class="text-gray-400">Airdrop 🏆</p>
-              <div class="mt-4 h-2 bg-white/5 rounded-full overflow-hidden">
-                <div class="h-full w-[30%] gradient-bg"></div>
-              </div>
-            </div>
-            <div class="card-bg p-8 rounded-2xl text-center group">
-              <div class="text-5xl font-bold mb-4 group-hover:gradient-text transition-all">35%</div>
-              <p class="text-gray-400">Liquidity Pool ⚡</p>
-              <div class="mt-4 h-2 bg-white/5 rounded-full overflow-hidden">
-                <div class="h-full w-[35%] gradient-bg"></div>
-              </div>
-            </div>
-            <div class="card-bg p-8 rounded-2xl text-center group">
-              <div class="text-5xl font-bold mb-4 group-hover:gradient-text transition-all">20%</div>
-              <p class="text-gray-400">Staking & Rewards 🍌</p>
-              <div class="mt-4 h-2 bg-white/5 rounded-full overflow-hidden">
-                <div class="h-full w-[20%] gradient-bg"></div>
-              </div>
-            </div>
-            <div class="card-bg p-8 rounded-2xl text-center group">
-              <div class="text-5xl font-bold mb-4 group-hover:gradient-text transition-all">15%</div>
-              <p class="text-gray-400">Marketing & Memes 🎭</p>
-              <div class="mt-4 h-2 bg-white/5 rounded-full overflow-hidden">
-                <div class="h-full w-[15%] gradient-bg"></div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -438,6 +475,19 @@
           }
         });
       });
+      function toggleMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const isOpen = mobileMenu.classList.contains('hidden');
+
+        if (isOpen) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+        }
+      }
     </script>
   </body>
 </html>
